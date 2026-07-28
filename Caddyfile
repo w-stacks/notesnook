@@ -1,0 +1,14 @@
+{
+	admin off
+	log {
+		format json
+	}
+}
+
+:80 {
+	try_files {path} /
+
+	encode gzip
+	root * /usr/share/caddy
+	file_server
+}
